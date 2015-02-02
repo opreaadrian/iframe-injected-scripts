@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN PAGE</title>
+</head>
+<body>
+    <div>
+        <h1>Iframe test</h1>
+    </div>
+    <div style="width:300px; height:100px; border: 1px solid tomato; overflow:hidden;">
+        <iframe id="ifr" src="ifr.html" frameborder="0"></iframe>
+    </div>
+    <button id="tst-ifr">Click</button>
+
+    <script>
+    document.querySelector('#tst-ifr').addEventListener('click', function(e) {
+
+        var script = document.createElement('script');
+
+        script.textContent = 'console.log(document.querySelector(\'#getme\'))';
+
+        document.querySelector('#ifr').contentDocument.head.appendChild(script);
+    });
+    </script>
+</body>
+</html>
